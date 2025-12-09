@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 function Card({ title, cover }) {
@@ -11,5 +12,7 @@ function Card({ title, cover }) {
     </article>
   );
 }
+
+
 
 export default Card;

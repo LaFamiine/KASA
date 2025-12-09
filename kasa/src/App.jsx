@@ -1,30 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './header';  
-import Hero from './Hero';      
-import Card from './Card';      
 import Footer from './Footer';  
-import accommodationsData from './data.json';
+import Acceuil from './Acceuil.jsx'; 
+import Card from './Card.jsx';
 import './App.css';
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <main className="main">
-        <Hero />
-        <section className="gallery">
-          <div className="gallery-grid">
-            {accommodationsData.map((accommodation) => (
-              <Card 
-                key={accommodation.id}
-                title={accommodation.title}
-                cover={accommodation.cover}
-              />
-            ))}
-          </div>
-        </section>
-      </main>
+      <Routes>
+        <Route path="/Acceuil" element={<Acceuil />} />
+        <Route path="/About" element={<About />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
