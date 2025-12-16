@@ -1,0 +1,56 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.error-content {
+  max-width: 600px;
+}
+
+.error-title {
+  font-size: 18rem;
+  font-weight: 700;
+  color: #ff6060;
+  margin: 0;
+  line-height: 1;
+}
+
+.error-message {
+  font-size: 2.25rem;
+  color: #ff6060;
+  margin: 66px 0 182px 0;
+  font-weight: 500;
+}
+
+.error-link {
+  font-size: 1.125rem;
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.error-link:hover {
+  color: #ff6060;
+}
+
+@media (max-width: 768px) {
+  .error-title {
+    font-size: 6rem;
+    margin-top: 100px;
+  }
+  
+  .error-message {
+    font-size: 1.125rem;
+    margin: 11px 0 133px 0;
+    padding: 0 60px;
+  }
+  
+  .error-link {
+    font-size: 0.875rem;
+  }
+}

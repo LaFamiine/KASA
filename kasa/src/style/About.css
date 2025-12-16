@@ -47,13 +47,7 @@
 }
 
 .collapse-content {
-  background-color: #f6f6f6;
-  color: #333;
   padding: 10px;
-}
-
-.collapse-section.active .collapse-header i {
-  transform: rotate(180deg);
 }
 
 
