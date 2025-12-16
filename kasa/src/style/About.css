@@ -36,15 +36,14 @@
   cursor: pointer;
 }
 
-.collapse-header h3 {
+.collapse-header h3{
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-.collapse-icon {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
+.collapse-section[open] .collapse-header i {
+  transform: rotate(180deg);
 }
 
 .collapse-content {
@@ -53,7 +52,7 @@
   padding: 10px;
 }
 
-.collapse-section[open] .collapse-icon {
+.collapse-section.active .collapse-header i {
   transform: rotate(180deg);
 }
 
