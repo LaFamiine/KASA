@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './header';  
-import Footer from './Footer';  
-import Acceuil from './Acceuil.jsx'; 
-import Card from './Card.jsx';
+import Header from './components/header';  
+import Footer from './components/Footer';  
+import Acceuil from './pages/Acceuil.jsx'; 
+import Card from './components/Card';
 import './App.css';
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/Acceuil" element={<Acceuil />} />
-        <Route path="/Card" element={<Card />} />
+        <Route path="/" element={<Acceuil />} />
+        <Route path="/logement" element={<Card />} />
       </Routes>
       <Footer />
     </Router>

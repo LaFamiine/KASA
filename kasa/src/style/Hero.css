@@ -1,0 +1,35 @@
+.hero {
+  height: 223px;
+  border-radius: 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+              url('https://www.figma.com/design/2BZEoBhyxt5IwZgRn0wGsL/Kasa_FR?node-id=165455-718&t=hC7O10VFWJAjQYsU-4') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1240px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 111px;
+    border-radius: 10px;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+    text-align: left;
+    max-width: 70%;
+  }
+}
