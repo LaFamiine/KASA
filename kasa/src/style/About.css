@@ -1,0 +1,85 @@
+.about-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-banner {
+  height: 223px;
+  border-radius: 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+              url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1240&h=223&fit=crop') center/cover;
+  margin: 40px 0;
+}
+
+.about-collapse-container {
+  max-width: 1023px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.collapse-section {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.collapse-header {
+  background-color: #ff6060;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.collapse-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.collapse-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.collapse-content {
+  background-color: #f6f6f6;
+  color: #333;
+  padding: 10px;
+}
+
+.collapse-section[open] .collapse-icon {
+  transform: rotate(180deg);
+}
+
+
+
+@media (max-width: 768px) {
+  .about-banner {
+    height: 111px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  .about-container {
+    padding: 0 10px;
+  }
+  
+  .collapse-header {
+    padding: 10px 15px;
+  }
+  
+  .collapse-header h3 {
+    font-size: 1rem;
+  }
+  
+  .collapse-content {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
