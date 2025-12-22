@@ -36,14 +36,14 @@
   cursor: pointer;
 }
 
-.collapse-header h3{
+.collapse-header title h3 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-.collapse-section[open] .collapse-header i {
-  transform: rotate(180deg);
+.collapse-icon.open {
+    transform: rotate(180deg);
 }
 
 .collapse-content {

@@ -3,7 +3,7 @@ import Header from './components/header';
 import Footer from './components/Footer';  
 import Acceuil from './pages/Acceuil.jsx'; 
 import Card from './components/Card';
-import About from './pages/About';
+import About from './pages/About.jsx';
 import Error404 from './pages/Error.jsx';
 import './App.css';
 
