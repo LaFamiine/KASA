@@ -1,16 +1,16 @@
-import '../style/Card.css'
+import { Link } from 'react-router-dom';
+import '../style/Card.css';
 
-function Card({ title, cover }) {
+function Card({ id, title, cover }) {
   return (
-    <article className="card">
-      <div className="card-image">
-        <img src={cover} alt={title} />
+    <Link to={`/logement/${id}`} className="card-link">
+      <div className="card">
+        <img src={cover} alt={title} className="card-image" />
         <div className="card-overlay"></div>
+        <h3 className="card-title">{title}</h3>
       </div>
-      <h3 className="card-title">{title}</h3>
-    </article>
+    </Link>
   );
 }
-
 
 export default Card;
