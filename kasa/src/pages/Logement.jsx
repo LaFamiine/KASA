@@ -5,7 +5,6 @@ import '../style/Logement.css';
 function Logement() {
   const { id } = useParams();
   
-  // Trouver le logement directement (pas besoin de useState si vous n'avez pas de mise à jour)
   const logement = accommodationsData.find(item => item.id === id);
 
   // Si aucun logement n'est trouvé, afficher un message
@@ -20,7 +19,6 @@ function Logement() {
 
   return (
     <main className="logement-main">
-      {/* Simple image au lieu du carousel pour commencer */}
       <div className="logement-image">
         <img src={logement.pictures[0]} alt={logement.title} />
       </div>
@@ -41,13 +39,6 @@ function Logement() {
             <div className="host">
               <p>{logement.host.name}</p>
               <img src={logement.host.picture} alt={logement.host.name} />
-            </div>
-            <div className="rating">
-              {/* Étoiles simples */}
-              <span className="stars">
-                {'★'.repeat(parseInt(logement.rating))}
-                {'☆'.repeat(5 - parseInt(logement.rating))}
-              </span>
             </div>
           </div>
         </div>

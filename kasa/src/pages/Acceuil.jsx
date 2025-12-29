@@ -12,6 +12,7 @@ function Acceuil() {
           {accommodationsData.map((accommodation) => (
             <Card 
               key={accommodation.id}
+              id={accommodation.id}
               title={accommodation.title}
               cover={accommodation.cover}
             />
