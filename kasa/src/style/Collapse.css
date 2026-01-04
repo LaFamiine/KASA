@@ -32,12 +32,19 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .collapse-header title h3 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+.equipments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .collapse-icon.open {

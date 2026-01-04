@@ -1,11 +1,12 @@
-import { useParams } from 'react-router-dom';
-import accommodationsData from '../data.json';
-import '../style/Logement.css';
+import { useParams } from "react-router-dom";
+import accommodationsData from "../data.json";
+import Collapse from "../components/Collapse";
+import "../style/Logement.css";
 
 function Logement() {
   const { id } = useParams();
-  
-  const logement = accommodationsData.find(item => item.id === id);
+
+  const logement = accommodationsData.find((item) => item.id === id);
 
   // Si aucun logement n'est trouvé, afficher un message
   if (!logement) {
@@ -22,7 +23,7 @@ function Logement() {
       <div className="logement-image">
         <img src={logement.pictures[0]} alt={logement.title} />
       </div>
-      
+
       <section className="logement-info">
         <div className="logement-header">
           <div className="logement-title-section">
@@ -30,11 +31,13 @@ function Logement() {
             <p className="location">{logement.location}</p>
             <div className="tags">
               {logement.tags.map((tag, index) => (
-                <span key={index} className="tag">{tag}</span>
+                <span key={index} className="tag">
+                  {tag}
+                </span>
               ))}
             </div>
           </div>
-          
+
           <div className="host-rating">
             <div className="host">
               <p>{logement.host.name}</p>
@@ -42,21 +45,22 @@ function Logement() {
             </div>
           </div>
         </div>
-        
+
         <div className="details">
-          <div className="description">
-            <h3>Description</h3>
-            <p>{logement.description}</p>
-          </div>
-          
-          <div className="equipments">
-            <h3>Équipements</h3>
-            <ul>
-              {logement.equipments.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          <Collapse title="Description" description={logement.description} isOpen={true} className="description" />
+
+          <Collapse
+            title="Équipements"
+            description={
+              <ul className="equipments-list">
+                {logement.equipments.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            }
+            isOpen={true}
+            className="equipments"
+          />
         </div>
       </section>
     </main>

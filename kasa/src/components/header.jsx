@@ -5,7 +5,12 @@ function Header() {
   return (
     <header className="header">
       <div className="header-content">
-        <h1 className="logo">Kasa</h1>
+        <Link to="/" className="logo-link">
+          <img 
+            src="/public/img/logo.png"// Chemin vers votre logo
+            className="logo"
+          />
+        </Link>
         <nav className="nav">
           <a href="/">Accueil</a>
           <a href="/about">À Propos</a>
