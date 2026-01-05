@@ -14,6 +14,9 @@ function Logement() {
       <div className="error-message">
         <h2>Logement non trouvé</h2>
         <p>Le logement avec l'ID "{id}" n'existe pas.</p>
+        <Link to="/" className="error-link">
+          Retourner sur la page d'accueil
+        </Link>
       </div>
     );
   }
