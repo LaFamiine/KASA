@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import accommodationsData from "../data.json";
 import Collapse from "../components/Collapse";
+import SlideShow from "../components/Slideshow";
+import { Link } from "react-router-dom";
 import "../style/Logement.css";
 
 function Logement() {
@@ -20,6 +22,22 @@ function Logement() {
       </div>
     );
   }
+
+  const renderStars = (rating) => {
+    const stars = [];
+    const maxStars = 5;
+    
+    for (let i = 1; i <= maxStars; i++) {
+      stars.push(
+        <i 
+          key={i} 
+          className={`fa-solid fa-star ${i <= parseInt(rating) ? "star-filled" : "star-empty"}`}
+        ></i>
+      );
+    }
+    
+    return stars;
+  };
 
   return (
     <main className="logement-main">
@@ -42,9 +60,14 @@ function Logement() {
           </div>
 
           <div className="host-rating">
-            <div className="host">
-              <p>{logement.host.name}</p>
-              <img src={logement.host.picture} alt={logement.host.name} />
+            <div className="host-info">
+              <div className="host">
+                <p className="host-name">{logement.host.name}</p>
+                <img src={logement.host.picture} alt={logement.host.name} className="host-picture" />
+              </div>
+              <div className="stars-container">
+                {renderStars(logement.rating)}
+              </div>
             </div>
           </div>
         </div>

@@ -61,12 +61,6 @@
   border-radius: 20px;
 }
 
-/* Si le slideshow n'a qu'une seule image, on cache les flèches et le compteur */
-.slideshow:has(.slideshow-image:only-of-type) .slideshow-btn,
-.slideshow:has(.slideshow-image:only-of-type) .slideshow-counter {
-  display: none;
-}
-
 @media (max-width: 768px) {
   .slideshow {
     height: 255px;

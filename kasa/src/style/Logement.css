@@ -113,6 +113,24 @@
   color: #FF6060;
 }
 
+.rating-stars {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.fa-solid.fa-star {
+  font-size: 24px;
+}
+
+.star-filled {
+  color: #ff6060; 
+}
+
+.star-empty {
+  color: #e3e3e3; 
+}
+
 @media (max-width: 768px) {
   .logement-image {
     height: 250px;

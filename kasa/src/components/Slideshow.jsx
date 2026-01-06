@@ -17,25 +17,25 @@ function Slideshow({ images }) {
   };
 
   return (
-    <div className="carousel">
-      <div className="carousel-images">
+    <div className="slideshow">
+      <div className="slideshow-images">
         <img 
           src={images[currentIndex]} 
           alt={`Slide ${currentIndex + 1}`}
-          className="carousel-image"
+          className="slideshow-image"
         />
       </div>
       
       {images.length > 1 && (
         <>
-          <button className="carousel-btn prev" onClick={prevSlide}>
+          <button className="slideshow-btn prev" onClick={prevSlide}>
             ❮
           </button>
-          <button className="carousel-btn next" onClick={nextSlide}>
+          <button className="slideshow-btn next" onClick={nextSlide}>
             ❯
           </button>
           
-          <div className="carousel-counter">
+          <div className="slideshow-counter">
             {currentIndex + 1}/{images.length}
           </div>
         </>
@@ -43,5 +43,7 @@ function Slideshow({ images }) {
     </div>
   );
 }
+
+
 
 export default Slideshow;
