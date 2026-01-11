@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import accommodationsData from "../data.json";
+import Slideshow from "../components/Slideshow";
 import Collapse from "../components/Collapse";
-import SlideShow from "../components/Slideshow";
 import { Link } from "react-router-dom";
 import "../style/Logement.css";
 
@@ -10,7 +10,6 @@ function Logement() {
 
   const logement = accommodationsData.find((item) => item.id === id);
 
-  // Si aucun logement n'est trouvé, afficher un message
   if (!logement) {
     return (
       <div className="error-message">
@@ -26,12 +25,14 @@ function Logement() {
   const renderStars = (rating) => {
     const stars = [];
     const maxStars = 5;
+    const numericRating = parseInt(rating);
     
     for (let i = 1; i <= maxStars; i++) {
       stars.push(
         <i 
           key={i} 
-          className={`fa-solid fa-star ${i <= parseInt(rating) ? "star-filled" : "star-empty"}`}
+          className={`fa-star ${i <= numericRating ? 'fa-solid star-filled' : 'fa-regular star-empty'}`}
+          style={{ color: i <= numericRating ? '#FF6060' : '#E3E3E3' }}
         ></i>
       );
     }
@@ -41,10 +42,8 @@ function Logement() {
 
   return (
     <main className="logement-main">
-      <div className="logement-image">
-        <img src={logement.pictures[0]} alt={logement.title} />
-      </div>
-
+      <Slideshow images={logement.pictures} />
+      
       <section className="logement-info">
         <div className="logement-header">
           <div className="logement-title-section">
@@ -73,7 +72,12 @@ function Logement() {
         </div>
 
         <div className="details">
-          <Collapse title="Description" description={logement.description} isOpen={true} className="description" />
+          <Collapse 
+            title="Description" 
+            description={logement.description} 
+            isOpen={true} 
+            className="description" 
+          />
 
           <Collapse
             title="Équipements"

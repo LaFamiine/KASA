@@ -1,11 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import data from '../data.json';
 import '../style/Slideshow.css';
 
-function Slideshow({ images }) {
+function Slideshow() {
+  const { id } = useParams(); // Utilisation de l'id en paramètre
+  const logement = data.find(logement => logement.id === id);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [id]);
+  
+  if (!logement) {
+    return <div>Logement non trouvé</div>;
+  }
+  
+  const { pictures: images } = logement;
+  
+  if (!images || images.length === 0) {
+    return <div>Aucune image disponible</div>;
+  }
+
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
