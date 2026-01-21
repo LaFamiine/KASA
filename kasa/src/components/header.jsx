@@ -7,7 +7,7 @@ function Header() {
       <div className="header-content">
         <Link to="/" className="logo-link">
           <img 
-            src="/public/img/logo.png"// Chemin vers votre logo
+            src="/public/img/LOGO_MOBILE.png"// Chemin vers votre logo
             className="logo"
           />
         </Link>

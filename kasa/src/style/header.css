@@ -13,7 +13,6 @@
 }
 
 .logo {
-  color: #ff6060;
   font-size: 2rem;
   margin: 0;
   font-weight: bold;
@@ -32,12 +31,25 @@
 }
 
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .nav a {
-    margin: 0 15px;
-  }
+  .logo img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  color: #000000;
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
 }
