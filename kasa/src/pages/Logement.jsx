@@ -32,7 +32,7 @@ function Logement() {
         <i 
           key={i} 
           className={`fa-star ${i <= numericRating ? 'fa-solid star-filled' : 'fa-regular star-empty'}`}
-          style={{ fontSize: '1rem', color: i <= numericRating ? '#FF6060' : '#E3E3E3' }}
+          style={{ fontSize: '1.2rem', color: i <= numericRating ? '#FF6060' : '#E3E3E3' }}
         ></i>
       );
     }

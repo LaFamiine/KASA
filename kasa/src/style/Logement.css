@@ -19,21 +19,28 @@
 }
 
 .logement-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
   margin-bottom: 30px;
+}
+
+
+.logement-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .logement-title-section h1 {
   color: #FF6060;
   font-size: 36px;
-  margin-top: 20px;
+  margin: 0;
 }
 
 .location {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .tags {
@@ -45,7 +52,7 @@
 .tag {
   background: #FF6060;
   color: white;
-  padding: 5px 15px;
+  padding: 5px 20px;
   border-radius: 10px;
   font-size: 14px;
 }
@@ -54,26 +61,37 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 20px;
+  gap: 15px;
 }
 
 .host {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 35px;
 }
 
 .host p {
   color: #FF6060;
   text-align: right;
-  max-width: 100px;
+  max-width: 90px;
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .host img {
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
+  object-fit: cover;
 }
+
+.stars-container { 
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
 
 .rating .stars {
   color: #FF6060;
@@ -82,6 +100,7 @@
 
 .details {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
@@ -147,7 +166,9 @@
   .logement-title-section h1 {
     font-size: 24px;
   }
-
+.details {
+    grid-template-columns: 1fr;
+  }
   
  .host-rating {
     flex-direction: row;
@@ -187,11 +208,6 @@
 .host-picture {
     width: 48px;
     height: 48px;
-}
-
-.stars-container {
-    display: flex;
-    gap: 5px;
 }
 
 .fa-star {
